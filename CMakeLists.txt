@@ -10,12 +10,12 @@ project(blink)
 pico_sdk_init()
 
 # rest of your project
-add_executable(blink
+add_executable(${CMAKE_PROJECT_NAME}
     blink.c
 )
 
 # Add pico_stdlib library which aggregates commonly used features
-target_link_libraries(blink pico_stdlib)
+target_link_libraries(${CMAKE_PROJECT_NAME} pico_stdlib)
 
 # create map/bin/hex/uf2 file in addition to ELF.
-pico_add_extra_outputs(blink)
+pico_add_extra_outputs(${CMAKE_PROJECT_NAME})
